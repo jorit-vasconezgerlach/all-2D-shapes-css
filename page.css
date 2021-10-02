@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 100px;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 100px;
+    color: #FFFFFF;
+    background: #000000;
+}
+
+:root {
+    --size: 80px;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+section div {
+    background: #CA3216;
+}
+
+#square div {
+    width: var(--size);
+    height: var(--size);
+}
+#rectangle div {
+    width: var(--size);
+    height: calc(var(--size)/2);
+}
+#parallelogram div {
+    width: var(--size);
+    height: calc(var(--size)/2);
+    transform: skew(20deg);
+}
+#trapezium div {
+    width: calc(var(--size)*1.2);
+    border-left: calc(var(--size)/4) solid transparent;
+	border-right: calc(var(--size)/4) solid transparent;
+	border-bottom: calc(var(--size)/2) solid #CA3216;
+    background: none;
+}
+
+#circle div {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+}
+#elipse div {
+    width: calc(var(--size)/2);
+    height: var(--size);
+    border-radius: 50%;
+}
+
+#triangle div {
+    border-left: calc(var(--size)/2) solid transparent;
+	border-right: calc(var(--size)/2) solid transparent;
+	border-bottom: var(--size) solid #CA3216;
+    background: none;
+}
+
+#hearth div {
+    margin-top: calc(var(--size)/5);
+    width: calc(var(--size)/2);
+    height: calc(var(--size)/2);
+    rotate: 45deg;
+    position: relative;
+}
+#hearth div::before,
+#hearth div::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--size)/2);
+    height: calc(var(--size)/2);
+    border-radius: 100%;
+    background: #CA3216;
+}
+#hearth div::before {
+    top: calc(var(--size)*-0.25);
+}
+#hearth div::after {
+    left: calc(var(--size)*-0.25);
+}
